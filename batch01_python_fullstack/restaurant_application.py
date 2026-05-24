@@ -27,6 +27,7 @@ while option != 3:
 
         isOrder = True
         total_bill = 0
+        ordered_foods = {}
 
         while isOrder:
             print("Available Foods : ")
@@ -39,6 +40,7 @@ while option != 3:
             if food in foods_dictionary:
                 quantity = int(input("How much you want ? "))
 
+                ordered_foods[food] = quantity
                 total_bill += foods_dictionary[food] * quantity
             else:
                 print("Sorry this food Not available !!!")
@@ -49,7 +51,10 @@ while option != 3:
                 isOrder = True
             else:
                 isOrder = False
+                for i in ordered_foods:
+                    print(i , ordered_foods[i])
                 print("Your total bill is : ", total_bill)
+
 
 
 
