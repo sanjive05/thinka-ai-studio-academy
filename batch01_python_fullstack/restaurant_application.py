@@ -11,10 +11,20 @@ price = [60 , 20,     40 ,   80]
 foods[0]  what is dosa price ?
     price[0]
 '''
-###################################################################
 
-foods = ['Dosa', 'Idli', 'Poori', 'Pongal']
-price = [60, 20, 40, 80]
+
+###################################################################
+def write_stars():
+    print("***********************************************************")
+
+
+
+def display_menu():
+    print("Available Foods : ")
+
+    for i in foods_dictionary:
+        print(i, foods_dictionary[i])
+
 foods_dictionary = {'Dosa': 60, 'Idli': 20, 'Poori': 40, 'Pongal': 80}
 option = 0
 
@@ -22,6 +32,7 @@ while option != 3:
 
     print("***************Wellcome to Thinka AI Hotel*****************")
     option = int(input("1. Order\n3. exit\n"))
+    write_stars()
 
     if option == 1:
 
@@ -30,11 +41,7 @@ while option != 3:
         ordered_foods = {}
 
         while isOrder:
-            print("Available Foods : ")
-
-            for i in foods_dictionary:
-                print(i, foods_dictionary[i])
-
+            display_menu()
             food = input("Please enter your food : ")
 
             if food in foods_dictionary:
@@ -52,12 +59,6 @@ while option != 3:
             else:
                 isOrder = False
                 for i in ordered_foods:
-                    print(i , ordered_foods[i])
+                    print(i, ordered_foods[i])
+                    write_stars()
                 print("Your total bill is : ", total_bill)
-
-
-
-
-
-
-
